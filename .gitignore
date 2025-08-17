@@ -1,0 +1,8 @@
+*.out
+main.c
+libftTester
+.vscode
+*.o
+*.a
+*.py
+teste*
