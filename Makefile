@@ -50,9 +50,9 @@ P_SRC= printf/ft_printf.c \
 		printf/ft_count_utils.c \
 		printf/ft_putnbr_utils.c \
 		printf/ft_put_utils.c
-G_SRC= gnl
-OBJ= $(SRC:.c=.o)
-P_OBJ= $(P_SRC:.c=.o)
+O_DIR = obj/
+OBJ= $(SRC:%.c=$(O_DIR)%.o)
+P_OBJ= $(P_SRC:%.c=$(O_DIR)%.o)
 NAME= libft.a
 
 ifeq ($(findstring printf, $(MAKECMDGOALS)), printf)
@@ -75,7 +75,8 @@ $(NAME): $(OBJ)
 	@sleep 0.5
 	@art/./ascii_art_text.sh
 
-%.o: %.c
+$(O_DIR)%.o: %.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CCFLAGS) -c $< -o $@
 	@echo "\033[95mCompiling\033[0m $(notdir $<)"
 	@sleep 0.0001
@@ -108,7 +109,7 @@ clean:
 	@sleep 0.2
 	@echo ".\033[0m"
 	@sleep 0.2
-	@rm -f $(OBJ) $(P_OBJ)
+	@rm -rf $(O_DIR)
 
 fclean: clean
 	@echo "\033[95mCleansing Library"
