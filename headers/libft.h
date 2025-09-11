@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/08/12 18:06:43 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/11 19:44:20 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_isprint(int c);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *nptr);
 int		ft_printf(const char *s, ...);
+int		ft_atoi_base(const char *nptr, const char *base);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
