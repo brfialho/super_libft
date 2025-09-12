@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/11 19:44:20 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/12 16:35:59 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char	*ft_itoa(int n);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
+char	*ft_itoa_base(int n, char *base);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

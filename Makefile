@@ -44,6 +44,7 @@ SRC= srcs/ft_isalnum.c \
 	srcs/ft_lstiter_bonus.c \
 	srcs/ft_lstmap_bonus.c \
 	srcs/ft_atoi_base.c \
+	srcs/ft_itoa_base.c \
 	gnl/get_next_line.c \
 	gnl/get_next_line_utils.c \
 	srcs/ft_lstadd_front_bonus.c
