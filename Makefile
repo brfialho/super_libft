@@ -7,6 +7,7 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/char/ft_isprint.c \
 	srcs/char/ft_toupper.c \
 	srcs/char/ft_tolower.c \
+	srcs/char/ft_isnumspace.c \
 	srcs/memory/ft_memset.c \
 	srcs/memory/ft_bzero.c \
 	srcs/memory/ft_memcpy.c \
