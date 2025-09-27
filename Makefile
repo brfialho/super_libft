@@ -39,6 +39,7 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/str/ft_strlen.c \
 	srcs/lst/lst_add_end.c \
 	srcs/lst/lst_add_start.c \
+	srcs/lst/lst_bubble_sort.c \
 	srcs/lst/lst_del_all.c \
 	srcs/lst/lst_del_node.c \
 	srcs/lst/lst_dup.c \

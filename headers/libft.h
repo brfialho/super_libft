@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 17:58:13 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/27 18:55:57 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	lst_for_each(t_list *lst, void (*f)(void *));
 void	lst_del_node(t_list *lst, void (*del)(void*));
 void	lst_del_all(t_list **lst, void (*del)(void*));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	lst_bubble_sort(t_list *head, int (*cmp)(void *, void *));
 
 char	*ft_itoa(int n);
 char	*get_next_line(int fd);
