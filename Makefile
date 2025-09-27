@@ -28,6 +28,7 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/str/ft_strnstr.c \
 	srcs/str/ft_strdup.c \
 	srcs/str/ft_strjoin.c \
+	srcs/str/ft_strjoin_free.c \
 	srcs/str/ft_substr.c \
 	srcs/str/ft_strtrim.c \
 	srcs/str/ft_split.c \
