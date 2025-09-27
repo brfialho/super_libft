@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   lst_add_end_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 19:13:08 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:57:46 by brfialho         ###   ########.fr       */
+/*   Created: 2025/07/17 19:43:51 by brfialho          #+#    #+#             */
+/*   Updated: 2025/09/27 16:46:43 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int	ft_lstsize(t_list*lst)
+void	lst_add_end(t_list **lst, t_list *new)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
+	if (!lst || !new)
+		return ;
+	if (!*lst)
 	{
-		lst = lst->next;
-		size++;
+		*lst = new;
+		return ;
 	}
-	return (size);
+	lst_last(*lst)->next = new;
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	t_list a;
-// 	t_list b;
-// 	t_list c;
-// 	t_list *lst;
-// 	c.next = 0;
-// 	b.next = &c;
-// 	a.next = &b;
-// 	lst = &a;
-// 	printf("%d\n", ft_lstsize(0));
-// }

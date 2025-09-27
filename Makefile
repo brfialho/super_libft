@@ -37,15 +37,15 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/str/ft_strmapi.c \
 	srcs/str/ft_striteri.c \
 	srcs/str/ft_strlen.c \
-	srcs/lst/ft_lstnew_bonus.c \
-	srcs/lst/ft_lstsize_bonus.c \
-	srcs/lst/ft_lstlast_bonus.c \
-	srcs/lst/ft_lstadd_back_bonus.c \
-	srcs/lst/ft_lstdelone_bonus.c \
-	srcs/lst/ft_lstclear_bonus.c \
-	srcs/lst/ft_lstiter_bonus.c \
-	srcs/lst/ft_lstmap_bonus.c \
-	srcs/lst/ft_lstadd_front_bonus.c \
+	srcs/lst/lst_add_end.c \
+	srcs/lst/lst_add_start.c \
+	srcs/lst/lst_del_all.c \
+	srcs/lst/lst_del_node.c \
+	srcs/lst/lst_for_each.c \
+	srcs/lst/lst_last.c \
+	srcs/lst/lst_map.c \
+	srcs/lst/lst_new_node.c \
+	srcs/lst/lst_size.c \
 	srcs/conversion/ft_atoi.c \
 	srcs/conversion/ft_itoa.c \
 	srcs/conversion/ft_atoi_base.c \

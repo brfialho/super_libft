@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 15:22:19 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:05:31 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isnumspace(int c);
-int		ft_lstsize(t_list *lst);
+int		lst_size(t_list *lst);
 int		ft_atoi(const char *nptr);
 int		ft_split_len(char **split);
 int		ft_printf(const char *s, ...);
@@ -45,11 +45,11 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	lst_add_end(t_list **lst, t_list *new);
+void	lst_add_start(t_list **lst, t_list *new);
+void	lst_for_each(t_list *lst, void (*f)(void *));
+void	lst_del_node(t_list *lst, void (*del)(void*));
+void	lst_del_all(t_list **lst, void (*del)(void*));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	*ft_itoa(int n);
@@ -77,8 +77,8 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(void *content);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*lst_last(t_list *lst);
+t_list	*lst_new_node(void *content);
+t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   lst_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 19:36:57 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:57:46 by brfialho         ###   ########.fr       */
+/*   Created: 2025/07/19 15:32:21 by brfialho          #+#    #+#             */
+/*   Updated: 2025/09/27 17:05:31 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	t_list a;
-// 	t_list b;
-// 	t_list c;
-// 	t_list *lst;
+	t_list	*n_lst;
+	t_list	*node;
 
-// 	c.next = 0;
-// 	b.next = &c;
-// 	a.next = &b;
-// 	lst = &a;
-// 	printf("%p %p\n", &c, ft_lstlast(lst));
-// }
+	if (!lst || !f || !del)
+		return (0);
+	n_lst = lst_new_node(f(lst->content));
+	if (!n_lst)
+		return (0);
+	lst = lst->next;
+	while (lst)
+	{
+		node = lst_new_node(f(lst->content));
+		if (!node)
+		{
+			lst_del_all(&n_lst, del);
+			return (0);
+		}
+		lst_add_end(&n_lst, node);
+		lst = lst->next;
+	}
+	return (n_lst);
+}

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   lst_del_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 20:41:40 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:57:46 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:01:55 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	lst_del_all(t_list **lst, void (*del)(void*))
 {
 	t_list	*p;
 	t_list	*d;
@@ -60,7 +60,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 // 	// printf("%p\n", a);
 // 	// printf("%p\n", b);
 // 	// printf("%p\n", c);
-// 	ft_lstclear(lst, &ft_delete);
+// 	lst_del_all(lst, &ft_delete);
 // 	// printf("%p\n", a);
 // 	// printf("%p\n", b);
 // 	// printf("%p\n", c);
