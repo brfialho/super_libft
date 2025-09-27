@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 17:05:31 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:58:13 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 t_list	*lst_last(t_list *lst);
 t_list	*lst_new_node(void *content);
 t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*lst_dup(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
