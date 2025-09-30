@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/30 03:58:31 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/30 04:04:58 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define ULONG_MAX 18446744073709551615UL
 # define TRUE 1
 # define FALSE 0
+
 // Structs
 typedef struct s_list
 {
