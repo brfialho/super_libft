@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 20:41:40 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 17:57:23 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/29 22:54:57 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ void	lst_del_all(t_list **lst, void (*del)(void*))
 	t_list	*p;
 	t_list	*d;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	p = *lst;
 	while (p)
 	{
 		d = p;
 		p = p->next;
-		del(d->content);
+		if (del)
+			del(d->content);
 		free(d);
 	}
 	*lst = 0;
