@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/30 02:09:03 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/09/30 03:58:31 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,12 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 // Conversion
-int		ft_atoi_base(const char *nptr, const char *base);
-int		ft_atoi(const char *nptr);
-char	*ft_itoa_base(int n, char *base);
+int		ft_atoi_base(const char *nptr, const char *base)
+		__attribute__((nonnull(1, 2)));
+int		ft_atoi(const char *nptr)
+		__attribute__((nonnull(1)));
+char	*ft_itoa_base(int n, char *base)
+		__attribute__((nonnull(2)));
 char	*ft_itoa(int n);
 
 // IO
