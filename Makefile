@@ -48,6 +48,7 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/lst/lst_last.c \
 	srcs/lst/lst_map.c \
 	srcs/lst/lst_new_node.c \
+	srcs/lst/lst_search.c \
 	srcs/lst/lst_size.c \
 	srcs/conversion/ft_atoi.c \
 	srcs/conversion/ft_itoa.c \
