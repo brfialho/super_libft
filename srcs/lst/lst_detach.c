@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_detach.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/02 18:56:50 by brfialho          #+#    #+#             */
+/*   Updated: 2025/10/02 18:57:25 by brfialho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../headers/libft.h"
+
+t_list	*lst_detach(t_list **head, t_list *node)
+{
+	t_list	*lst;
+
+	if (*head == node)
+	{
+		*head = (*head)->next;
+		return (node);
+	}
+	lst = *head;
+	while (lst)
+	{
+		if (lst->next == node)
+		{
+			lst->next = node->next;
+			return (node);
+		}
+		lst = lst->next;
+	}
+	return (NULL);
+}

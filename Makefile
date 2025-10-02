@@ -43,6 +43,7 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/lst/lst_deep_dup.c \
 	srcs/lst/lst_del_all.c \
 	srcs/lst/lst_del_node.c \
+	srcs/lst/lst_detach.c \
 	srcs/lst/lst_dup.c \
 	srcs/lst/lst_for_each.c \
 	srcs/lst/lst_last.c \

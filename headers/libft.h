@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 17:48:15 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:58:17 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ void	lst_for_each(t_list *head, void (*f)(void *))
 int		lst_size(t_list *head);
 t_list	*lst_deep_dup(t_list *head, void *(*copy)(void *), void (*del)(void *))
 		__attribute__((nonnull(1, 2, 3)));
+t_list	*lst_detach(t_list **head, t_list *node)
+		__attribute__((nonnull(1, 2)));
 t_list	*lst_dup(t_list *head, void (*del)(void *))
 		__attribute__((nonnull(1, 2)));
 t_list	*lst_last(t_list *head)
