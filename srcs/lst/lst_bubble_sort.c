@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 18:54:04 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 18:54:51 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:08:49 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	lst_bubble_sort(t_list *head, int (*cmp)(void *, void *))
 	int		len;
 	t_list	*i;
 
-	if (!head)
+	if (!head || cmp)
 		return ;
 	len = lst_size(head);
 	while (len--)

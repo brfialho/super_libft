@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 07:16:05 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:57:46 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:21:42 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	char	*join;
 
+	if (!s1 && !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	join = ft_calloc(1, len + 1);
 	if (!join)
-		return (0);
+		return (NULL);
 	while (*s1)
 		*join++ = *s1++;
 	while (*s2)

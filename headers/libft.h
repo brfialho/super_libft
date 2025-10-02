@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/30 04:04:58 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:46:44 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,37 @@
 # include <unistd.h>
 
 // Macros
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-# define UINT_MAX  4294967295U
-# define LONG_MAX  9223372036854775807L
-# define LONG_MIN -9223372036854775808L
-# define ULONG_MAX 18446744073709551615UL
-# define TRUE 1
-# define FALSE 0
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
+# ifndef UINT_MAX
+#  define UINT_MAX 4294967295U
+# endif
+
+# ifndef LONG_MAX
+#  define LONG_MAX 9223372036854775807L
+# endif
+
+# ifndef LONG_MIN
+#  define LONG_MIN -9223372036854775808L
+# endif
+
+# ifndef ULONG_MAX
+#  define ULONG_MAX 18446744073709551615UL
+# endif
+
+# ifndef TRUE
+#  define TRUE 1
+# endif
+
+# ifndef FALSE
+#  define FALSE 0
+# endif
 
 // Structs
 typedef struct s_list
@@ -34,6 +57,27 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+// Functions 
+//
+// Design disclaimer:
+//
+// List functions use 'lst_' prefix for readability and brevity within the lib
+//
+// Some functions do not use the 'nonnull' attribute, 
+// even though one might expect them to.
+//
+// This is an intentional design choice for flexibility and safety. 
+// For example, NULL inputs are gracefully handled in the following cases:
+//
+// lst_new_node     -> Allows initializing a node with NULL content
+// ft_free          -> Frees and nullifies pointer if not NULL
+// ft_split_len     -> Returns 0 for NULL input
+// ft_str_join      -> Allows joining when one string is NULL
+// ft_str_join_free -> Same as above
+// ft_strlen        -> NULL-safe, returns 0
+// lst_size         -> Returns 0 if the list is NULL
+//
+//
 // Char
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -60,51 +104,83 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 // Lst
-void	lst_add_end(t_list **lst, t_list *new);
-void	lst_add_start(t_list **lst, t_list *new);
-void	lst_bubble_sort(t_list *head, int (*cmp)(void *, void *));
-void	lst_del_all(t_list **lst, void (*del)(void*));
-void	lst_del_node(t_list *lst, void (*del)(void*));
-void	lst_for_each(t_list *lst, void (*f)(void *));
+void	lst_add_end(t_list **lst, t_list *new)
+		__attribute__((nonnull(1, 2)));
+void	lst_add_start(t_list **lst, t_list *new)
+		__attribute__((nonnull(1, 2)));
+void	lst_bubble_sort(t_list *head, int (*cmp)(void *, void *))
+		__attribute__((nonnull(1, 2)));
+void	lst_del_all(t_list **lst, void (*del)(void*))
+		__attribute__((nonnull(1)));
+void	lst_del_node(t_list *lst, void (*del)(void*))
+		__attribute__((nonnull(1)));
+void	lst_for_each(t_list *lst, void (*f)(void *))
+		__attribute__((nonnull(1, 2)));
 int		lst_size(t_list *lst);
-t_list	*lst_deep_dup(t_list *lst, void *(*copy)(void *), void (*del)(void *));
-t_list	*lst_dup(t_list *lst, void (*del)(void *));
-t_list	*lst_last(t_list *lst);
-t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*lst_deep_dup(t_list *lst, void *(*copy)(void *), void (*del)(void *))
+		__attribute__((nonnull(1, 2, 3)));
+t_list	*lst_dup(t_list *lst, void (*del)(void *))
+		__attribute__((nonnull(1, 2)));
+t_list	*lst_last(t_list *lst)
+		__attribute__((nonnull(1)));
+t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
+		__attribute__((nonnull(1, 2, 3)));
 t_list	*lst_new_node(void *content);
-t_list	*lst_search(t_list *lst, void *target, int (*cmp)(void *, void *));
+t_list	*lst_search(t_list *lst, void *target, int (*cmp)(void *, void *))
+		__attribute__((nonnull(1, 3)));
 
 // Memory
-void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t nmemb, size_t size);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memset(void	*s, int c, size_t n);
+void	ft_bzero(void *s, size_t n)
+		__attribute__((nonnull(1)));
+void	*ft_calloc(size_t nmemb, size_t size)
+		__attribute__((nonnull(1)));
+void	*ft_memchr(const void *s, int c, size_t n)
+		__attribute__((nonnull(1)));
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+		__attribute__((nonnull(1, 2)));
+void	*ft_memmove(void *dest, const void *src, size_t n)
+		__attribute__((nonnull(1, 2)));
+void	*ft_memset(void	*s, int c, size_t n)
+		__attribute__((nonnull(1)));
 int		ft_free(char **s);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
+		__attribute__((nonnull(1, 2)));
 
 // String
-char	**ft_split(char const *s, char c);
-void	ft_split_free(char**split);
+char	**ft_split(char const *s, char c)
+		__attribute__((nonnull(1)));
+void	ft_split_free(char **split)
+		__attribute__((nonnull(1)));
 int		ft_split_len(char **split);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+		__attribute__((nonnull(1, 2)));
+char	*ft_strchr(const char *s, int c)
+		__attribute__((nonnull(1)));
+char	*ft_strdup(const char *s)
+		__attribute__((nonnull(1)));
 char	*ft_strjoin_free(char *s1, char *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strnstr(const char *big, const char *little, size_t len);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+		__attribute__((nonnull(1, 2)));
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+		__attribute__((nonnull(1, 2)));
+char	*ft_strrchr(const char *s, int c)
+		__attribute__((nonnull(1)));
+char	*ft_strtrim(char const *s1, char const *set)
+		__attribute__((nonnull(1, 2)));
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+		__attribute__((nonnull(1)));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+		__attribute__((nonnull(1, 2)));
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+		__attribute__((nonnull(1, 2)));
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+		__attribute__((nonnull(1, 2)));
 size_t	ft_strlen(const char *s);
 
 // Other Projects
 char	*get_next_line(int fd);
-int		ft_printf(const char *s, ...);
+int		ft_printf(const char *s, ...)
+		__attribute__((nonnull(1)));
 
 #endif
