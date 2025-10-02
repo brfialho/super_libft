@@ -6,20 +6,20 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:00:18 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/29 23:00:21 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:28:10 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_list	*lst_deep_dup(t_list *lst, void *(*copy)(void *), void (*del)(void *))
+t_list	*lst_deep_dup(t_list *head, void *(*copy)(void *), void (*del)(void *))
 {
+	t_list	*lst;
 	t_list	*new;
 	t_list	*node;
 	void	*content;
 
-	if (!lst)
-		return (NULL);
+	lst = head;
 	content = copy(lst->content);
 	if (!content)
 		return (NULL);

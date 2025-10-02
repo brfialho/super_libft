@@ -6,19 +6,17 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:56:26 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 17:56:51 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:30:56 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_list	*lst_last(t_list *lst)
+t_list	*lst_last(t_list *head)
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (head->next)
+		head = head->next;
+	return (head);
 }
 // #include <stdio.h>
 // int	main(void)

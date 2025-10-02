@@ -6,20 +6,20 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:56:38 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/27 17:56:40 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:32:25 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int	lst_size(t_list*lst)
+int	lst_size(t_list *head)
 {
 	int	size;
 
 	size = 0;
-	while (lst)
+	while (head)
 	{
-		lst = lst->next;
+		head = head->next;
 		size++;
 	}
 	return (size);

@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 16:46:44 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:29:44 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,36 +104,35 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 // Lst
-void	lst_add_end(t_list **lst, t_list *new)
+void	lst_add_end(t_list **head, t_list *new)
 		__attribute__((nonnull(1, 2)));
-void	lst_add_start(t_list **lst, t_list *new)
+void	lst_add_start(t_list **head, t_list *new)
 		__attribute__((nonnull(1, 2)));
 void	lst_bubble_sort(t_list *head, int (*cmp)(void *, void *))
 		__attribute__((nonnull(1, 2)));
-void	lst_del_all(t_list **lst, void (*del)(void*))
+void	lst_del_all(t_list **head, void (*del)(void*))
 		__attribute__((nonnull(1)));
-void	lst_del_node(t_list *lst, void (*del)(void*))
+void	lst_del_node(t_list *node, void (*del)(void*))
 		__attribute__((nonnull(1)));
-void	lst_for_each(t_list *lst, void (*f)(void *))
+void	lst_for_each(t_list *head, void (*f)(void *))
 		__attribute__((nonnull(1, 2)));
-int		lst_size(t_list *lst);
-t_list	*lst_deep_dup(t_list *lst, void *(*copy)(void *), void (*del)(void *))
+int		lst_size(t_list *head);
+t_list	*lst_deep_dup(t_list *head, void *(*copy)(void *), void (*del)(void *))
 		__attribute__((nonnull(1, 2, 3)));
-t_list	*lst_dup(t_list *lst, void (*del)(void *))
+t_list	*lst_dup(t_list *head, void (*del)(void *))
 		__attribute__((nonnull(1, 2)));
-t_list	*lst_last(t_list *lst)
+t_list	*lst_last(t_list *head)
 		__attribute__((nonnull(1)));
-t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*lst_map(t_list *head, void *(*f)(void *), void (*del)(void *))
 		__attribute__((nonnull(1, 2, 3)));
 t_list	*lst_new_node(void *content);
-t_list	*lst_search(t_list *lst, void *target, int (*cmp)(void *, void *))
+t_list	*lst_search(t_list *head, void *target, int (*cmp)(void *, void *))
 		__attribute__((nonnull(1, 3)));
 
 // Memory
 void	ft_bzero(void *s, size_t n)
 		__attribute__((nonnull(1)));
-void	*ft_calloc(size_t nmemb, size_t size)
-		__attribute__((nonnull(1)));
+void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n)
 		__attribute__((nonnull(1)));
 void	*ft_memcpy(void *dest, const void *src, size_t n)

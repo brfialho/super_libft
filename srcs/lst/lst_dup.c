@@ -6,19 +6,19 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 22:58:04 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/29 22:58:19 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:30:28 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_list	*lst_dup(t_list *lst, void (*del)(void *))
+t_list	*lst_dup(t_list *head, void (*del)(void *))
 {
+	t_list	*lst;
 	t_list	*new;
 	t_list	*node;
 
-	if (!lst)
-		return (NULL);
+	lst = head;
 	new = lst_new_node(lst->content);
 	if (!new)
 		return (NULL);

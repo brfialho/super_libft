@@ -6,29 +6,27 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 20:41:40 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/29 22:54:57 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:33:43 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-void	lst_del_all(t_list **lst, void (*del)(void*))
+void	lst_del_all(t_list **head, void (*del)(void*))
 {
-	t_list	*p;
-	t_list	*d;
+	t_list	*lst;
+	t_list	*node;
 
-	if (!lst)
-		return ;
-	p = *lst;
-	while (p)
+	lst = *head;
+	while (lst)
 	{
-		d = p;
-		p = p->next;
+		node = lst;
+		lst = lst->next;
 		if (del)
-			del(d->content);
-		free(d);
+			del(node->content);
+		free(node);
 	}
-	*lst = 0;
+	*head = 0;
 }
 
 // void ft_delete(void	*v)
