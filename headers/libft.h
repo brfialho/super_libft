@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 17:29:44 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:48:15 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ typedef struct s_list
 //
 // Design disclaimer:
 //
-// List functions use 'lst_' prefix for readability and brevity within the lib
+// List functions use 'lst_' instead of 'ft_' prefix
+// for readability and brevity within the lib
 //
 // Some functions do not use the 'nonnull' attribute, 
 // even though one might expect them to.
