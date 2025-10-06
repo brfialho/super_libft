@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 18:56:50 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 18:57:25 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:35:46 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_list	*lst_detach(t_list **head, t_list *node)
 	if (*head == node)
 	{
 		*head = (*head)->next;
+		node->next = NULL;
 		return (node);
 	}
 	lst = *head;
@@ -27,6 +28,7 @@ t_list	*lst_detach(t_list **head, t_list *node)
 		if (lst->next == node)
 		{
 			lst->next = node->next;
+			node->next = NULL;
 			return (node);
 		}
 		lst = lst->next;
