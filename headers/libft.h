@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 18:58:17 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:23:17 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@
 
 # ifndef FALSE
 #  define FALSE 0
+# endif
+
+# ifndef BYTE
+#  define BYTE 8
 # endif
 
 // Structs
