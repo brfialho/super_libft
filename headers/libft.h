@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/06 20:23:17 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:37:39 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		__attribute__((nonnull(1, 2)));
 size_t	ft_strlen(const char *s);
+
+// Array
+
+void	ft_quick_sort(int *array, int len)
+		__attribute__((nonnull(1)));
 
 // Other Projects
 char	*get_next_line(int fd);
