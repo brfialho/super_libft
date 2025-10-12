@@ -6,14 +6,14 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 18:38:23 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/11 22:52:06 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/12 20:10:22 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-static void	swap(int *array, int j, int i);
 static int	partition(int *array, int start, int end);
+static void	swap(int *array, int j, int i);
 
 void	ft_quick_sort(int *array, int start, int end)
 {
@@ -36,11 +36,11 @@ static int	partition(int *array, int start, int end)
 	j = start - 1;
 	pivot = array[start + (end - start) / 2];
 	swap(array, start + (end - start) / 2, end);
-	while (++j < end)
-		if (array[j] < pivot)
-			swap(array, j, ++i);
-	swap(array, i + 1, end);
-	return (i + 1);
+	while (++i < end)
+		if (array[i] < pivot)
+			swap(array, i, ++j);
+	swap(array, j + 1, end);
+	return (j + 1);
 }
 
 static void	swap(int *array, int j, int i)

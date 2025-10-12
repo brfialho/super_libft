@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/11 21:36:59 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/12 20:08:18 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,8 @@ size_t	ft_strlen(const char *s);
 // Array
 
 void	ft_quick_sort(int *array, int start, int end)
+		__attribute__((nonnull(1)));
+void	ft_dual_quick_sort(int *array, int start, int end)
 		__attribute__((nonnull(1)));
 
 // Other Projects
