@@ -1,6 +1,8 @@
-CC= cc -Wall -Wextra -Werror
+INCLUDES = -Iheaders/
 
-SRC= srcs/char/ft_isalnum.c \
+CC = cc -Wall -Wextra -Werror
+
+SRC = srcs/char/ft_isalnum.c \
 	srcs/char/ft_isalpha.c \
 	srcs/char/ft_isascii.c \
 	srcs/char/ft_isdigit.c \
@@ -66,9 +68,9 @@ SRC= srcs/char/ft_isalnum.c \
 
 O_DIR = obj/
 
-OBJ= $(SRC:%.c=$(O_DIR)%.o)
+OBJ = $(SRC:%.c=$(O_DIR)%.o)
 
-NAME= libft.a
+NAME = libft.a
 
 all: $(NAME)
 	
@@ -88,7 +90,7 @@ $(NAME): $(OBJ)
 
 $(O_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
-	@$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@ $(INCLUDES)
 	@echo "\033[95mCompiling\033[0m $(notdir $<)"
 	@sleep 0.0001
 # 	@if [ "`basename $<`" = "ft_strlen.c" ]; then \

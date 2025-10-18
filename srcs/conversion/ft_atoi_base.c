@@ -6,11 +6,11 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:52:52 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:57:47 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 static int	get_digit(char digit, const char *base);
 

@@ -6,11 +6,11 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 22:58:04 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/02 17:30:28 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 t_list	*lst_dup(t_list *head, void (*del)(void *))
 {

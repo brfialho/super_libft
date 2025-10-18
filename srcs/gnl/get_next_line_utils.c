@@ -6,11 +6,11 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:48:44 by brfialho          #+#    #+#             */
-/*   Updated: 2025/09/26 16:39:57 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 void	*gnl_calloc(size_t nmemb, size_t size)
 {
