@@ -1,5 +1,5 @@
-CC= cc
-CCFLAGS= -Wall -Wextra -Werror
+CC= cc -Wall -Wextra -Werror
+
 SRC= srcs/char/ft_isalnum.c \
 	srcs/char/ft_isalpha.c \
 	srcs/char/ft_isascii.c \
@@ -58,19 +58,17 @@ SRC= srcs/char/ft_isalnum.c \
 	srcs/gnl/get_next_line.c \
 	srcs/gnl/get_next_line_utils.c \
 	srcs/array/ft_dual_quick_sort.c \
-	srcs/array/ft_quick_sort.c
-P_SRC= srcs/printf/ft_printf.c \
-		srcs/printf/ft_count_utils.c \
-		srcs/printf/ft_putnbr_utils.c \
-		srcs/printf/ft_put_utils.c
-O_DIR = obj/
-OBJ= $(SRC:%.c=$(O_DIR)%.o)
-P_OBJ= $(P_SRC:%.c=$(O_DIR)%.o)
-NAME= libft.a
+	srcs/array/ft_quick_sort.c \
+	srcs/printf/ft_printf.c \
+	srcs/printf/ft_count_utils.c \
+	srcs/printf/ft_putnbr_utils.c \
+	srcs/printf/ft_put_utils.c
 
-ifeq ($(findstring printf, $(MAKECMDGOALS)), printf)
-	OBJ += $(P_OBJ)
-endif
+O_DIR = obj/
+
+OBJ= $(SRC:%.c=$(O_DIR)%.o)
+
+NAME= libft.a
 
 all: $(NAME)
 	
@@ -90,7 +88,7 @@ $(NAME): $(OBJ)
 
 $(O_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
-	@$(CC) $(CCFLAGS) -c $< -o $@
+	@$(CC) -c $< -o $@
 	@echo "\033[95mCompiling\033[0m $(notdir $<)"
 	@sleep 0.0001
 # 	@if [ "`basename $<`" = "ft_strlen.c" ]; then \
@@ -137,4 +135,4 @@ fclean: clean
 
 re: fclean all
 
-printf: $(NAME)
+.PHONY: re fclean clean
