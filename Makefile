@@ -1,5 +1,5 @@
 CC= cc
-CCFLAGS= -Wall -Wextra -Werror -I.
+CCFLAGS= -Wall -Wextra -Werror
 SRC= srcs/char/ft_isalnum.c \
 	srcs/char/ft_isalpha.c \
 	srcs/char/ft_isascii.c \
