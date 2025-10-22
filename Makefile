@@ -79,23 +79,23 @@ all: $(NAME)
 	
 $(NAME): $(OBJ)
 	@echo "\033[95m\n### Rolling for Library Construction ###"
-	@sleep 1.5
-	@echo "."
 	@sleep 0.4
 	@echo "."
-	@sleep 0.4
+	@sleep 0.15
+	@echo "."
+	@sleep 0.15
 	@echo ".\033[0m"
-	@sleep 0.4
+	@sleep 0.15
 	@ar rsc $(NAME) $(OBJ)
 	@art/./ascii_art.sh
 	@sleep 0.5
 	@art/./ascii_art_text.sh
+	@sleep 0.5
 
 $(O_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
 	@$(CC) -c $< -o $@ $(INCLUDES)
 	@echo "\033[95mCompiling\033[0m $(notdir $<)"
-	@sleep 0.0001
 # 	@if [ "`basename $<`" = "ft_strlen.c" ]; then \
 # 		echo  "\033[31;1m!! CRITICAL ERROR !!"; \
 # 		sleep 2; \
@@ -118,24 +118,24 @@ $(O_DIR)%.o: %.c
 
 clean:
 	@echo "\033[95mCleansing All Objects"
-	@sleep 0.7
+	@sleep 0.4
 	@echo -n "."
-	@sleep 0.2
+	@sleep 0.15
 	@echo -n "."
-	@sleep 0.2
+	@sleep 0.15
 	@echo ".\033[0m"
-	@sleep 0.2
+	@sleep 0.15
 	@rm -rf $(O_DIR)
 
 fclean: clean
 	@echo "\033[95mCleansing Library"
-	@sleep 0.7
+	@sleep 0.4
 	@echo -n "."
-	@sleep 0.2
+	@sleep 0.15
 	@echo -n "."
-	@sleep 0.2
+	@sleep 0.15
 	@echo ".\033[0m"
-	@sleep 0.2
+	@sleep 0.15
 	@rm -f $(NAME)
 
 re: fclean all
