@@ -36,6 +36,7 @@ SRC = srcs/char/ft_isalnum.c \
 	srcs/str/ft_split.c \
 	srcs/str/ft_split_free.c \
 	srcs/str/ft_split_len.c \
+	srcs/str/ft_split_print.c \
 	srcs/str/ft_strmapi.c \
 	srcs/str/ft_striteri.c \
 	srcs/str/ft_strlen.c \

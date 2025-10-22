@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/22 14:32:35 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:52:50 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,8 @@ char	**ft_split(char const *s, char c)
 void	ft_split_free(char **split)
 		__attribute__((nonnull(1)));
 int		ft_split_len(char **split);
+void	ft_split_print(char **split)
+		__attribute__((nonnull(1)));
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		__attribute__((nonnull(1, 2)));
 char	*ft_strchr(const char *s, int c)
