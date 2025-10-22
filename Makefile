@@ -39,6 +39,9 @@ SRC = srcs/char/ft_isalnum.c \
 	srcs/str/ft_strmapi.c \
 	srcs/str/ft_striteri.c \
 	srcs/str/ft_strlen.c \
+	srcs/matrix/ft_tab_free_content.c \
+	srcs/matrix/ft_tab_init_alloc.c \
+	srcs/matrix/ft_tab_init_empty.c \
 	srcs/lst/lst_add_end.c \
 	srcs/lst/lst_add_start.c \
 	srcs/lst/lst_bubble_sort.c \
