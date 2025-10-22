@@ -43,6 +43,7 @@ SRC = srcs/char/ft_isalnum.c \
 	srcs/matrix/ft_tab_free_content.c \
 	srcs/matrix/ft_tab_init_alloc.c \
 	srcs/matrix/ft_tab_init_empty.c \
+	srcs/matrix/ft_tab_init_fields.c \
 	srcs/lst/lst_add_end.c \
 	srcs/lst/lst_add_start.c \
 	srcs/lst/lst_bubble_sort.c \
