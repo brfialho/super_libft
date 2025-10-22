@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/22 19:28:19 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/22 20:37:21 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		__attribute__((nonnull(1)));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		__attribute__((nonnull(1, 2)));
+size_t	ft_str_charcount(const char *s, int c)
+		__attribute__((nonnull(1)));
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		__attribute__((nonnull(1, 2)));
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
