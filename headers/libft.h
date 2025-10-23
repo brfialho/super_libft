@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/23 13:29:43 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/23 13:44:55 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,7 @@ void	ft_tab_free(t_tab *tab)
 		__attribute__((nonnull(1)));
 void	ft_tab_free_content(t_tab *tab)
 		__attribute__((nonnull(1)));
+t_tab	*ft_tab_dup(t_tab tab);
 t_tab	*ft_tab_init_alloc(t_tab *tab, size_t rows, size_t cols, size_t e_size)
 		__attribute__((nonnull(1)));
 t_tab	*ft_tab_init_empty(t_tab *tab, size_t rows, size_t cols, size_t e_size)
