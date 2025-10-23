@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:26:42 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/22 14:32:08 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/23 13:20:09 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ t_tab	*ft_tab_init_alloc(t_tab *tab, size_t rows, size_t cols, size_t e_size)
 			return (ft_tab_free_content(tab), NULL);
 		i++;
 	}
+	tab->rows = i;
 	return (tab);
 }
