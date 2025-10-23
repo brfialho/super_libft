@@ -43,6 +43,7 @@ SRC = srcs/char/ft_isalnum.c \
 	srcs/str/ft_strmapi.c \
 	srcs/str/ft_striteri.c \
 	srcs/str/ft_strlen.c \
+	srcs/matrix/ft_tab_free.c \
 	srcs/matrix/ft_tab_free_content.c \
 	srcs/matrix/ft_tab_init_alloc.c \
 	srcs/matrix/ft_tab_init_empty.c \

@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/23 12:46:18 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/23 13:29:43 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,8 @@ t_list	*lst_search(t_list *head, void *target, int (*cmp)(void *, void *))
 		__attribute__((nonnull(1, 3)));
 
 // Matrix
+void	ft_tab_free(t_tab *tab)
+		__attribute__((nonnull(1)));
 void	ft_tab_free_content(t_tab *tab)
 		__attribute__((nonnull(1)));
 t_tab	*ft_tab_init_alloc(t_tab *tab, size_t rows, size_t cols, size_t e_size)
