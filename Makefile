@@ -34,6 +34,7 @@ SRC = srcs/char/ft_isalnum.c \
 	srcs/str/ft_substr.c \
 	srcs/str/ft_strtrim.c \
 	srcs/str/ft_split.c \
+	srcs/str/ft_split_dup.c \
 	srcs/str/ft_split_free.c \
 	srcs/str/ft_split_len.c \
 	srcs/str/ft_split_print.c \
@@ -94,7 +95,6 @@ $(NAME): $(OBJ)
 	@art/./ascii_art.sh
 	@sleep 0.5
 	@art/./ascii_art_text.sh
-	@sleep 0.5
 
 $(O_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
