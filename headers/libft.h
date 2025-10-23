@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/23 13:44:55 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/23 18:09:10 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		__attribute__((nonnull(1, 2)));
 void	*ft_memset(void	*s, int c, size_t n)
 		__attribute__((nonnull(1)));
-int		ft_free(char **s);
+int		ft_free(void **s);
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		__attribute__((nonnull(1, 2)));
 
