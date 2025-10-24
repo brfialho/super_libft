@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 15:20:23 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/10/24 16:03:22 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	len = ft_strlen(s1) + ft_strlen(s2);
 	join = ft_calloc(1, len + 1);
 	if (!join)
-		return (ft_free(&s1), ft_free(&s2), NULL);
+		return (ft_free((void **)&s1), ft_free((void **)&s2), NULL);
 	tmp = s1;
 	if (tmp)
 		while (*tmp)
@@ -32,7 +32,7 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	if (tmp)
 		while (*tmp)
 			*join++ = *tmp++;
-	ft_free(&s1);
-	ft_free(&s2);
+	ft_free((void **)&s1);
+	ft_free((void **)&s2);
 	return (join - len);
 }
