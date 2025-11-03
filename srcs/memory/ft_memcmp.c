@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 02:42:31 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:00:12 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	while (n-- && *(char *)s1++ == *(char *)s2++)
 		;
-	return ((unsigned char)*(char *)--s1 - (unsigned char)*(char *)--s2);
+	return ((t_uchar) *(char *)--s1 - (t_uchar) *(char *)--s2);
 }
 
 // "hello\0"

@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/11/03 19:56:24 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:57:41 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ char	*ft_strdup(const char *s)
 		__attribute__((nonnull(1)));
 char	*ft_strjoin_free(char *s1, char *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(t_uint, char))
 		__attribute__((nonnull(1, 2)));
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 		__attribute__((nonnull(1, 2)));
@@ -206,9 +206,9 @@ char	*ft_strrchr(const char *s, int c)
 		__attribute__((nonnull(1)));
 char	*ft_strtrim(char const *s1, char const *set)
 		__attribute__((nonnull(1, 2)));
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, t_uint start, size_t len)
 		__attribute__((nonnull(1)));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(t_uint, char*))
 		__attribute__((nonnull(1, 2)));
 size_t	ft_str_charcount(const char *s, int c)
 		__attribute__((nonnull(1)));

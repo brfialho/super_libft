@@ -6,16 +6,18 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 19:48:17 by brfialho          #+#    #+#             */
-/*   Updated: 2025/07/19 22:31:31 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:01:21 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(t_uint, char*))
 {
 	int	i;
 
 	i = -1;
 	while (s[++i])
-		f((unsigned int)i, &s[i]);
+		f((t_uint)i, &s[i]);
 	return ;
 }

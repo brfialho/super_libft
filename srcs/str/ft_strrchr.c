@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 01:48:22 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:58:14 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	len = (ft_strlen((char *)s) + 1);
 	while (len--)
-		if ((unsigned char)c == s[len])
+		if ((t_uchar)c == s[len])
 			return ((char *)s + len);
 	return (0);
 }

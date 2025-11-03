@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 23:25:14 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:58:28 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	pf_putptr(void *p)
 	if (!p)
 		return (write(1, "(nil)", 5));
 	write(1, "0x", 2);
-	return (2 + pf_put_ul((unsigned long)p, "0123456789abcdef", 16));
+	return (2 + pf_put_ul((t_ulong)p, "0123456789abcdef", 16));
 }
 
 int	pf_put(char c, void *s)
@@ -43,8 +43,8 @@ int	pf_put(char c, void *s)
 	if (pf_instr("id", c))
 		return (pf_put_n((int)(long)s, "0123456789", 10));
 	if (c == 'u')
-		return (pf_put_un((unsigned int)(unsigned long)s, "0123456789", 10));
+		return (pf_put_un((t_uint)(t_ulong)s, "0123456789", 10));
 	if (c == 'x')
-		return (pf_put_un((unsigned long)s, "0123456789abcdef", 16));
-	return (pf_put_un((unsigned long)s, "0123456789ABCDEF", 16));
+		return (pf_put_un((t_ulong)s, "0123456789abcdef", 16));
+	return (pf_put_un((t_ulong)s, "0123456789ABCDEF", 16));
 }

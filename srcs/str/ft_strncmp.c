@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 02:04:41 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:00:45 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while ((*s1 || *s2) && n-- && *s1++ == *s2++)
 		;
-	return ((unsigned char)*--s1 - (unsigned char)*--s2);
+	return ((t_uchar) * --s1 - (t_uchar) * --s2);
 }
 //hello/0
 //helloa/0

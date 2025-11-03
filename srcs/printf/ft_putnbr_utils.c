@@ -6,13 +6,13 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 23:20:00 by brfialho          #+#    #+#             */
-/*   Updated: 2025/10/18 18:10:09 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:58:28 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	pf_put_ul(unsigned long n, char *base, int len)
+int	pf_put_ul(t_ulong n, char *base, int len)
 {
 	if (n / len)
 		pf_put_ul(n / len, base, len);
@@ -20,7 +20,7 @@ int	pf_put_ul(unsigned long n, char *base, int len)
 	return (pf_count_long(n, len));
 }
 
-int	pf_put_un(unsigned int n, char *base, int len)
+int	pf_put_un(t_uint n, char *base, int len)
 {
 	if (n / len)
 		pf_put_un(n / len, base, len);
