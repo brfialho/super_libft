@@ -6,7 +6,7 @@
 /*   By: brfialho <brfialho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:45:30 by brfialho          #+#    #+#             */
-/*   Updated: 2025/11/03 19:17:52 by brfialho         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:56:24 by brfialho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@
 #  define BYTE 8
 # endif
 
-// Type Macros
-# ifndef u_int
-#  define u_int unsigned int
-# endif
+//typedefs
+typedef unsigned int	t_uint;
+typedef unsigned char	t_uchar;
+typedef unsigned long	t_ulong;
 
 // Structs
 typedef struct s_list
